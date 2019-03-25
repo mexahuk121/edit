@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JfD-yJ-VAk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--iPhone models-->
+        <scene sceneID="6RV-Wr-BSK">
+            <objects>
+                <tableViewController id="cM4-ou-iDJ" customClass="MainTableViewController" customModule="edit_data_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2MY-3e-iQb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="JKt-04-REp">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JKt-04-REp" id="gcM-6d-pPP">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="cfR-wC-pCf" kind="show" identifier="edit" id="PfA-Z2-LS5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cM4-ou-iDJ" id="KNh-6l-i8W"/>
+                            <outlet property="delegate" destination="cM4-ou-iDJ" id="OAh-7i-883"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="iPhone models" id="WR0-o1-fJO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5Y-rH-Ecp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="347"/>
+        </scene>
+        <!--Edit row-->
+        <scene sceneID="tEz-tv-XAy">
+            <objects>
+                <tableViewController id="cfR-wC-pCf" customClass="DetailTableViewController" customModule="edit_data_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="46o-Ab-1LA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Model Name" id="fTb-bN-rv2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zZ4-bv-dBg">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zZ4-bv-dBg" id="GSM-KX-G7K">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-bY-Y6x">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cfR-wC-pCf" id="Qxt-PX-HXr"/>
+                            <outlet property="delegate" destination="cfR-wC-pCf" id="Ae8-6S-Gbp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit row" id="VXu-BC-3bi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="i72-Wo-75g">
+                            <connections>
+                                <segue destination="1QE-HA-PaL" kind="unwind" identifier="save" unwindAction="saveToMainViewController:" id="do1-TI-TJO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editModelTextField" destination="R5U-bY-Y6x" id="SCK-Y2-7Bt"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EiJ-gh-ql0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1QE-HA-PaL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="347"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ydZ-zw-vZz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JfD-yJ-VAk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dTj-Bg-A6A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cM4-ou-iDJ" kind="relationship" relationship="rootViewController" id="SK0-M1-bMD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pej-U5-ayP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="347"/>
+        </scene>
+    </scenes>
+</document>
